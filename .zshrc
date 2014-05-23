@@ -74,6 +74,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # My Stuff
+. ~/bin/dotfiles/bash/aliases
 . $HOME/.nvm/nvm.sh
 nvm use v0.10.26
 
