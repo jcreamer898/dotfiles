@@ -48,7 +48,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,7 +78,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 . $HOME/.nvm/nvm.sh
 nvm use v0.10.26
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
+eval "$(rbenv init -)"
 . /usr/local/Cellar/z/1.8/etc/profile.d/z.sh
 
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin

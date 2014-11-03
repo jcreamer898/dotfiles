@@ -1,6 +1,10 @@
-alias gs="git status" 
+alias gs="git status"
 
 function take {
     mkdir $1
     cd $1
+}
+
+function search-files {
+    grep -re $1 ./ | cut -d: -f1
 }
