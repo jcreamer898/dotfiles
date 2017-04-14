@@ -4,11 +4,13 @@ alias beu="be unicorn"
 alias bec="be cucumber"
 alias ber="be rake"
 alias rs="rails s"
+alias reload="source ~/.zshrc"
 
 alias k="kubectl"
 alias pods="kubectl get pods"
-alias pods-stage="kubecetl get pods --kubeconfig ~/.kube/config.staging"
-alias pods-prod="kubecetl get pods --kubeconfig ~/.kube/config.prod"
+alias pods-stage="kubectl get pods --kubeconfig ~/.kube/config.staging"
+alias pods-prod="kubectl get pods --kubeconfig ~/.kube/config.prod"
+
 
 function take {
     mkdir $1
