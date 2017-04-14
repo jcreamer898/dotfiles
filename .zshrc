@@ -1,3 +1,5 @@
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -48,7 +50,9 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras)
+plugins=(git git-extras bundler atom docker)
+
+#function git(){hub $@}
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,11 +78,26 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # My Stuff
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 . ~/bin/dotfiles/bash/aliases
 . $HOME/.nvm/nvm.sh
-nvm use v0.10.26
+nvm use v6.9.1
 
 eval "$(rbenv init -)"
-. /usr/local/Cellar/z/1.8/etc/profile.d/z.sh
+. `brew --prefix`/Cellar/z/1.8/etc/profile.d/z.sh 
+
+
+export LANDING_PAGES_HOME=/Users/jonathanc/LonelyPlanet/repos/landing-pages
+alias startlp="export RBENV_VERSION=2.0.0-p353 && export RAILS_ENV=development && cd $LANDING_PAGES_HOME && unicorn"
+alias bundleclean="bundle exec rake assets:clean assets:precompile --trace"
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+export RIZZO_PATH=/Users/jonathanc/LonelyPlanet/repos/rizzo
+source dnvm.sh
+
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+  . $LUNCHY_DIR/lunchy-completion.zsh
+fi
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
