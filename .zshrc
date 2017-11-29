@@ -1,3 +1,6 @@
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+rvm use 2.4.1
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 # Path to your oh-my-zsh installation.
@@ -81,23 +84,22 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 . ~/bin/dotfiles/bash/aliases
 . $HOME/.nvm/nvm.sh
-nvm use v6.9.1
 
-eval "$(rbenv init -)"
+nvm use v8.6.0
+
 . `brew --prefix`/Cellar/z/1.8/etc/profile.d/z.sh 
 
 
 export LANDING_PAGES_HOME=/Users/jonathanc/LonelyPlanet/repos/landing-pages
-alias startlp="export RBENV_VERSION=2.0.0-p353 && export RAILS_ENV=development && cd $LANDING_PAGES_HOME && unicorn"
 alias bundleclean="bundle exec rake assets:clean assets:precompile --trace"
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 export RIZZO_PATH=/Users/jonathanc/LonelyPlanet/repos/rizzo
 source dnvm.sh
 
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
-fi
+#LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+#if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+#  . $LUNCHY_DIR/lunchy-completion.zsh
+#fi
 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}

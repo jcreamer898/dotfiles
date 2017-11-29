@@ -1,4 +1,4 @@
-
+alias jenkins="JENKINS_URL='https://jonathanc:Love1024!@@build.lonelyplanet.com' nestor"
 alias gs="git status"
 alias beu="be unicorn"
 alias bec="be cucumber"
@@ -7,10 +7,14 @@ alias rs="rails s"
 alias reload="source ~/.zshrc"
 
 alias k="kubectl"
+alias ks="kubectl --kubeconfig ~/.kube/config.staging"
+alias kq="kubectl --kubeconfig ~/.kube/config"
+alias kp="kubectl --kubeconfig ~/.kube/config.prod"
 alias pods="kubectl get pods"
 alias pods-stage="kubectl get pods --kubeconfig ~/.kube/config.staging"
 alias pods-prod="kubectl get pods --kubeconfig ~/.kube/config.prod"
 
+alias dc="docker-compose"
 
 function take {
     mkdir $1
