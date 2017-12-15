@@ -16,6 +16,10 @@ alias pods-prod="kubectl get pods --kubeconfig ~/.kube/config.prod"
 
 alias dc="docker-compose"
 
+function health-check {
+    curl -sIXGET http://localhost:"${HOST_PORT}"/health-check | grep -q 'HTTP/1.1 200 OK'
+}
+
 function take {
     mkdir $1
     cd $1
