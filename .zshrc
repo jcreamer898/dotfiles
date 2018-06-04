@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras bundler atom docker)
+plugins=(git git-extras bundler atom docker npm)
 
 #function git(){hub $@}
 
@@ -80,11 +80,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # My Stuff
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 . ~/bin/dotfiles/bash/aliases
-. $HOME/.nvm/nvm.sh
+# . $HOME/.nvm/nvm.sh
 
 nvm use v8.6.0
 
-. `brew --prefix`/Cellar/z/1.8/etc/profile.d/z.sh 
+. `brew --prefix`/Cellar/z/1.8/etc/profile.d/z.sh
 
 
 export LANDING_PAGES_HOME=/Users/jonathanc/LonelyPlanet/repos/landing-pages
@@ -99,5 +99,5 @@ source dnvm.sh
 #  . $LUNCHY_DIR/lunchy-completion.zsh
 #fi
 
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+# code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
