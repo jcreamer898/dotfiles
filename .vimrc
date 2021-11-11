@@ -37,12 +37,18 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+call plug#begin('~/.vim/plugged')
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'bluz71/vim-nightfly-guicolors'
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=700
+
+set number
 
 " Enable filetype plugins
 filetype plugin on
@@ -121,7 +127,11 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set termguicolors
+colorscheme nightfly 
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -137,7 +147,6 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -391,3 +400,4 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
